@@ -37,6 +37,21 @@ public class MyService extends Service {
 
     }
     public int onStartCommand(Intent intent, int flags, int startId) {
+        
+        /*List<String> appNames = new ArrayList<String>();
+        Intent startUpIntent = new Intent(Intent.ACTION_MAIN);
+        startUpIntent.addCategory(Intent.CATEGORY_LAUNCHER);
+
+        PackageManager pm = this.getPackageManager();
+        List<ResolveInfo> activities = pm.queryIntentActivities(startUpIntent, 0);
+
+        for (ResolveInfo s : activities) {
+            appNames.add(s.loadLabel(pm).toString());
+        }
+        for (String l : appNames){
+            Log.d("Log", "Installed package :" + l);
+        }*/
+        
 
         FindApp mr = new FindApp();
         new Thread(mr).start();
